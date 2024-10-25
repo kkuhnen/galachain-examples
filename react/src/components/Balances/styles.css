@@ -1,0 +1,40 @@
+.balances-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.balances-list > li {
+  margin-bottom: 1rem;
+}
+
+.balances-list > li:last-child {
+  margin-bottom: 0;
+}
+
+.balances-list-load-more {
+  margin-top: 2rem;
+}
+
+.balances-list-load-more button {
+  margin: 0 auto;
+}
+
+.balances-list-loading-skeleton {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  height: 8.25rem;
+  margin-bottom: 1rem;
+}
+
+.balances-list-loading-spinner {
+  height: 1rem;
+  margin-right: 0.5rem;
+  width: 1rem;
+}
+
+.balances-list-no-results {
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  margin: 0;
+}

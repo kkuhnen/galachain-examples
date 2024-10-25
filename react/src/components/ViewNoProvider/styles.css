@@ -1,0 +1,6 @@
+.view-no-provider-message {
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  margin: 0 0 2rem;
+  text-align: center;
+}

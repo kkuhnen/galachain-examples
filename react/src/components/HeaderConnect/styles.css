@@ -1,0 +1,46 @@
+.user-info {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  height: 2rem;
+  justify-content: center;
+}
+
+.header-connect-status {
+  align-items: center;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.5rem;
+  justify-content: center;
+  line-height: 1rem;
+  transition: width 250ms var(--transition-timing-function);
+  width: 0;
+}
+
+.header-connect-status.connected {
+  padding: 0.25rem 0.5rem;
+  width: 9rem;
+}
+
+.header-connect-status.connected .avatar-icon {
+  width: 1rem;
+}
+
+.header-connect-status .address {
+  display: block;
+  max-width: 6rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.avatar-icon {
+  height: auto;
+  width: 1.5rem;
+}
+
+.link-icon {
+  height: auto;
+  width: 1rem;
+}

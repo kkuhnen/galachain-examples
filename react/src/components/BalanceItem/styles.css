@@ -1,0 +1,124 @@
+.balance-item {
+  background-color: var(--background-tertiary);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.balance-item hr {
+  border-color: var(--text-secondary);
+  opacity: 0.25;
+}
+
+.balance-item-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.balance-item-info-content {
+  flex: 1 1 auto;
+  order: 3;
+  overflow: hidden;
+  padding-top: 1rem;
+  width: 100%;
+}
+
+.balance-name-wrap {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.expanded .balance-name-wrap {
+  white-space: normal;
+  word-break: break-all;
+}
+
+.balance-item-image,
+.balance-item-actions {
+  flex: 0 0 auto;
+}
+
+.balance-item-actions {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.balance-item-title {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.balance-details-label {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.balance-details {
+  font-size: 0.875rem;
+}
+
+.balance-details.hidden,
+.balance-item-available-summary {
+  display: none;
+}
+
+.balance-item-available-summary {
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.balance-details.hidden + .balance-item-available-summary {
+  display: block;
+}
+
+.balance-item-instance-ids {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.balance-item-instance-ids > li {
+  display: inline-block;
+  margin-right: 0.25rem;
+}
+
+.balance-item-instance-ids > li:last-of-type {
+  margin-right: 0;
+}
+
+.balance-item-available-summary .balance-item-instance-ids {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.balance-details-grid {
+  color: var(--text-secondary);
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.6rem 1rem;
+}
+
+.balance-details-grid dt:last-of-type,
+.balance-details-grid dd:last-of-type {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.balance-details-grid dd {
+  margin: 0;
+}
+
+@media screen and (min-width: 480px) {
+  .balance-item-info {
+    flex-wrap: nowrap;
+  }
+  .balance-item-info-content {
+    order: initial;
+  }
+}

@@ -1,0 +1,25 @@
+.site-header {
+  background-color: var(--color-surface-950);
+  padding: 0.75rem 0;
+  position: relative;
+}
+
+.site-header-logo {
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 420px) {
+  .site-header {
+    padding: 1.25rem 0;
+  }
+
+  .site-header .page-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .site-header-logo {
+    margin: 0;
+  }
+}
