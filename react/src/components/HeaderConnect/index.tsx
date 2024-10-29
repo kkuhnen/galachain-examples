@@ -1,10 +1,10 @@
 import { type FC } from "react";
-import { useEthereumContext } from "~/hooks/useEthereumContext";
+import { useGalaChainContext } from "~/hooks/useGalaChainContext";
 import ConnectButton from "~/components/ConnectButton";
 import "./styles.css";
 
 const HeaderConnect: FC = () => {
-  const { address, isConnected } = useEthereumContext();
+  const { address, isConnected } = useGalaChainContext();
   return (
     <div className="user-info">
       <span

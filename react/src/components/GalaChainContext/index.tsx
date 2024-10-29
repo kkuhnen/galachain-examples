@@ -5,20 +5,20 @@ import {
   useEffect,
   useState,
 } from "react";
-import { useEthereum } from "~/hooks/useEthereum";
-import { IEthereumContext } from "~/types";
+import { useGalaChain } from "~/hooks/useGalaChain";
+import { IGalaChainContext } from "~/types";
 
 interface IProps {
   children?: ReactNode;
 }
 
-const localStorageKey = "galachain-react-examples.isEthereumConnected";
+const localStorageKey = "galachain-react-examples.isGalaChainConnected";
 
-export const EthereumContext = createContext<IEthereumContext | undefined>(
+export const GalaChainContext = createContext<IGalaChainContext | undefined>(
   undefined
 );
 
-const EthereumProvider: FC<IProps> = ({ children }) => {
+const GalaChainProvider: FC<IProps> = ({ children }) => {
   const [isInitialized, setIsInitialized] = useState(false);
   const {
     browserConnectClient,
@@ -32,7 +32,7 @@ const EthereumProvider: FC<IProps> = ({ children }) => {
     disconnect,
     registerUser,
     unsubscribeFromEvents,
-  } = useEthereum(localStorageKey);
+  } = useGalaChain(localStorageKey);
 
   // Automatically check if connected on inital load
   useEffect(() => {
@@ -48,7 +48,7 @@ const EthereumProvider: FC<IProps> = ({ children }) => {
   }, [init, unsubscribeFromEvents]);
 
   return (
-    <EthereumContext.Provider
+    <GalaChainContext.Provider
       value={{
         address,
         browserConnectClient,
@@ -62,8 +62,8 @@ const EthereumProvider: FC<IProps> = ({ children }) => {
       }}
     >
       {isInitialized ? children : <div></div>}
-    </EthereumContext.Provider>
+    </GalaChainContext.Provider>
   );
 };
 
-export default EthereumProvider;
+export default GalaChainProvider;

@@ -1,5 +1,5 @@
 import { type FC, type ReactNode } from "react";
-import { useEthereumContext } from "~/hooks/useEthereumContext";
+import { useGalaChainContext } from "~/hooks/useGalaChainContext";
 
 interface IProps {
   children?: ReactNode;
@@ -8,7 +8,7 @@ interface IProps {
 
 const ConnectButton: FC<IProps> = ({ children, className }) => {
   const { isConnected, isPendingConnection, connect, disconnect } =
-    useEthereumContext();
+    useGalaChainContext();
   return (
     <button
       className={className}

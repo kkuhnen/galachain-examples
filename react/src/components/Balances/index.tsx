@@ -4,7 +4,7 @@ import {
 } from "@gala-chain/connect";
 import { type FC, useCallback, useEffect, useMemo, useState } from "react";
 import { GALACHAIN_TOKEN_CONTRACT_GATEWAY_URL } from "~/constants";
-import { useEthereumContext } from "~/hooks/useEthereumContext";
+import { useGalaChainContext } from "~/hooks/useGalaChainContext";
 import { type ITokenBalanceWithMetadata } from "~/types";
 import { stringifyTokenClassKey } from "~/utils";
 import BalanceItem from "~/components/BalanceItem";
@@ -16,7 +16,7 @@ interface IProps {
 }
 
 const Balances: FC<IProps> = ({ limit = 10 }) => {
-  const { address, browserConnectClient } = useEthereumContext();
+  const { address, browserConnectClient } = useGalaChainContext();
   const [isPending, setIsPending] = useState(false);
   const [balances, setBalances] = useState<ITokenBalanceWithMetadata[]>([]);
   const [nextPageBookmark, setNextPageBookmark] = useState("");

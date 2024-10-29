@@ -5,7 +5,7 @@ import {
   TokenClass,
 } from "@gala-chain/connect";
 
-export interface IEthereumContext {
+export interface IGalaChainContext {
   address: string;
   browserConnectClient: BrowserConnectClient | null;
   isConnected: boolean;

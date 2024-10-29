@@ -2,10 +2,10 @@ import { type FC } from "react";
 import ViewDisconnected from "~/components/ViewDisconnected";
 import ViewConnected from "~/components/ViewConnected";
 import ViewUnregistered from "~/components/ViewUnregistered";
-import { useEthereumContext } from "~/hooks/useEthereumContext";
+import { useGalaChainContext } from "~/hooks/useGalaChainContext";
 
 const Content: FC = () => {
-  const { isConnected, isRegistered } = useEthereumContext();
+  const { isConnected, isRegistered } = useGalaChainContext();
   return (
     <>
       {!isConnected && <ViewDisconnected />}

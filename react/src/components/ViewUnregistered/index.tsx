@@ -2,11 +2,11 @@ import { type FC } from "react";
 import LoadingSpinner from "~/components/LoadingSpinner";
 import PageContent from "~/components/PageContent";
 import RegisterButton from "~/components/RegisterButton";
-import { useEthereumContext } from "~/hooks/useEthereumContext";
+import { useGalaChainContext } from "~/hooks/useGalaChainContext";
 import "./styles.css";
 
 const ViewUnregistered: FC = () => {
-  const { isPendingRegistration } = useEthereumContext();
+  const { isPendingRegistration } = useGalaChainContext();
   return (
     <PageContent pageTitle="Register Wallet" centered srOnlyTitle>
       {isPendingRegistration && (

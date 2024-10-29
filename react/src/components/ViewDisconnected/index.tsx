@@ -2,11 +2,11 @@ import { type FC } from "react";
 import ConnectButton from "~/components/ConnectButton";
 import LoadingSpinner from "~/components/LoadingSpinner";
 import PageContent from "~/components/PageContent";
-import { useEthereumContext } from "~/hooks/useEthereumContext";
+import { useGalaChainContext } from "~/hooks/useGalaChainContext";
 import "./styles.css";
 
 const ViewDisconnected: FC = () => {
-  const { isPendingConnection } = useEthereumContext();
+  const { isPendingConnection } = useGalaChainContext();
   return (
     <PageContent pageTitle="Connect Wallet" centered srOnlyTitle>
       {isPendingConnection && (

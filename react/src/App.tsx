@@ -1,4 +1,4 @@
-import EthereumProvider from "~/components/EthereumContext";
+import GalaChainProvider from "~/components/GalaChainContext";
 import Content from "~/components/Content";
 import Header from "~/components/Header";
 import HeaderConnect from "~/components/HeaderConnect";
@@ -16,12 +16,12 @@ function App() {
   }
   return (
     <>
-      <EthereumProvider>
+      <GalaChainProvider>
         <Header>
           <HeaderConnect />
         </Header>
         <Content />
-      </EthereumProvider>
+      </GalaChainProvider>
     </>
   );
 }

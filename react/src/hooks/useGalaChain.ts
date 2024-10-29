@@ -11,7 +11,7 @@ import {
 import { type IUserAliasObject } from "~/types";
 import { getAddressWithoutPrefix } from "~/utils";
 
-export const useEthereum = (localStorageKey: string) => {
+export const useGalaChain = (localStorageKey: string) => {
   const browserConnectClient = useMemo(() => new BrowserConnectClient(), []);
   const publicKeyClient = useMemo(
     () =>
