@@ -15,7 +15,7 @@ interface IProps {
   limit?: number;
 }
 
-const Balances: FC<IProps> = ({ limit = 12 }) => {
+const Balances: FC<IProps> = ({ limit = 10 }) => {
   const { address, browserConnectClient } = useGalaChainContext();
   const [isPending, setIsPending] = useState(false);
   const [balances, setBalances] = useState<ITokenBalanceWithMetadata[]>([]);
