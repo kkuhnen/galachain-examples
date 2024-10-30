@@ -4,6 +4,7 @@
   --color-surface-75: #ebebeb;
   --color-surface-90: #e4e4e4;
   --color-surface-100: #e3e3e3;
+  --color-surface-150: #d9d9d9;
   --color-surface-400: #999999;
   --color-surface-600: #666666;
   --color-surface-800: #333333;
@@ -19,6 +20,7 @@
   --background-primary: var(--color-surface-925);
   --background-secondary: var(--color-surface-910);
   --background-tertiary: var(--color-surface-900);
+  --background-header: var(--color-surface-950);
 
   --text-inverted: var(--color-surface-1000);
   --text-primary: var(--color-surface-0);
@@ -30,6 +32,7 @@
   --button-primary-background-hover: var(--color-vibrantblue-500);
   --button-primary-text: var(--color-surface-1000);
   --button-primary-text-hover: var(--color-surface-0);
+
   --button-secondary-background: var(--color-surface-850);
   --button-secondary-background-hover: var(--color-surface-0);
   --button-secondary-text: var(--color-surface-0);
@@ -67,9 +70,19 @@
     --background-primary: var(--color-surface-75);
     --background-secondary: var(--color-surface-90);
     --background-tertiary: var(--color-surface-100);
+    --background-header: var(--color-surface-50);
+
     --text-inverted: var(--color-surface-0);
     --text-primary: var(--color-surface-1000);
     --text-secondary: var(--color-surface-600);
+
+    --button-primary-background: var(--color-surface-1000);
+    --button-primary-text: var(--color-surface-0);
+
+    --button-secondary-background: var(--color-surface-150);
+    --button-secondary-background-hover: var(--color-surface-1000);
+    --button-secondary-text: var(--color-surface-1000);
+    --button-secondary-text-hover: var(--color-surface-0);
   }
 }
 

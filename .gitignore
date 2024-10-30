@@ -26,8 +26,3 @@ dist-ssr
 # Yalc
 .yalc
 yalc.lock
-
-# Env
-.env
-.env.*
-!.env.example

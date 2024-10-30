@@ -12,7 +12,7 @@ interface IProps {
   children?: ReactNode;
 }
 
-const localStorageKey = "galachain-react-examples.isGalaChainConnected";
+const localStorageKey = "galachain-examples.react.isGalaChainConnected";
 
 export const GalaChainContext = createContext<IGalaChainContext | undefined>(
   undefined

@@ -1,0 +1,62 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+
+    - name: Build and Prepare
+      id: build-and-prepare
+      run: |
+        # Create a temporary directory for the build
+        tmp_dir=$(mktemp -d)
+
+        # Initialize the index file content
+        index_file_content=""
+
+        # Extract the repository name from GITHUB_REPOSITORY
+        repo_name=${GITHUB_REPOSITORY#*/}
+
+        # Iterate over all directories with a build command in the repository
+        for dir in */; do
+          if [ -f "$dir/package.json" ] && grep -q "\"build\":" "$dir/package.json"; then
+            # Set the base path and build the project
+            export GALACHAIN_EXAMPLES_ASSET_PATH="/$repo_name/$(basename "$dir")/"
+            echo "Building $(basename "$dir") with base path $VITE_BASE_PATH"
+            (cd "$dir" && npm ci && npm run build)
+            # Copy the build files to the temporary directory
+            mkdir -p "$tmp_dir/${dir%/}"
+            cp -r "$dir/dist/"* "$tmp_dir/${dir%/}/"
+            index_file_content+="<li><a href=\"${dir%/}/\">${dir%/}</a></li>"
+          fi
+        done
+
+        # Replace the links placeholder in the index.html file
+        index_file_content="<ul>${index_file_content}</ul>"
+        index_content=$(< ./index.html)
+        index_content="${index_content//\{\{links\}\}/$index_file_content}"
+
+        # Write the index.html file to the temporary directory
+        echo "$index_content" > "$tmp_dir/index.html"
+
+        # Set the output for the next step
+        echo "deploy-dir=$tmp_dir" >> $GITHUB_OUTPUT
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ${{ steps.build-and-prepare.outputs.deploy-dir }}

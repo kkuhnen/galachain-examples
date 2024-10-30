@@ -1,10 +1,11 @@
 .site-header {
-  background-color: var(--color-surface-950);
+  background-color: var(--background-header);
   padding: 0.75rem 0;
   position: relative;
 }
 
 .site-header-logo {
+  fill: var(--text-primary);
   margin: 0 auto;
 }
 
