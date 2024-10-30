@@ -149,8 +149,8 @@ export const useGalaChain = (localStorageKey: string) => {
       return;
     }
 
-    if (browserConnectClient.galachainEthAlias) {
-      setConnected(browserConnectClient.galachainEthAlias);
+    if (browserConnectClient.galaChainAddress) {
+      setConnected(browserConnectClient.galaChainAddress);
       subscribeToEvents();
       return;
     }
